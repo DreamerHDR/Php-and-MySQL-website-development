@@ -1,0 +1,385 @@
+/* Общие стили */
+html, body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+	margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/*header-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+	box-sizing: border-box; /* Убедись, что padding учитывается в ширине */
+}
+
+/* Стили для шапки сайта */
+.site-header {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+	display: flex; /* Используем Flexbox */
+  justify-content: space-between; /* Распределяем элементы по краям */
+  align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+
+#branding {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+/* Стили для логотипа */
+#branding img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Для адаптации логотипа на маленьких экранах */
+@media (max-width: 768px) {
+  #branding img {
+    max-width: 150px;
+  }
+}
+
+/* Навигация */
+.main-navigation {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+	display: flex; /* Используем Flexbox для меню */
+  justify-content: center; /* Центрируем элементы меню */
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: #444;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-item a:hover {
+  background-color: #555;
+}
+
+/* Адаптивное поведение на больших экранах */
+@media (min-width: 1200px) {
+  .hero {
+    height: 90vh; /* Ограничиваем высоту слайдера для больших экранов */
+  }
+}
+
+/* Адаптация шапки сайта для экранов 768px и меньше */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column; /* Располагаем элементы вертикально */
+    padding: 15px 0; /* Увеличиваем внутренние отступы для мобильных */
+  }
+
+  #branding {
+    margin-bottom: 15px; /* Добавляем отступ под логотипом */
+  }
+
+  .main-navigation {
+    flex-direction: column; /* Меню будет вертикальным */
+    padding: 0; /* Убираем отступы, чтобы меню стало плотнее */
+  }
+
+  .menu {
+    flex-direction: column; /* Меню элементы также располагаем вертикально */
+  }
+
+  .menu-item {
+    margin: 10px 0; /* Добавляем отступ между элементами меню */
+  }
+
+  .menu-item a {
+    padding: 10px 15px; /* Корректируем внутренние отступы ссылок */
+    width: 100%; /* Ссылки будут занимать всю ширину контейнера */
+    text-align: center; /* Текст по центру для более удобного восприятия */
+  }
+}
+
+
+/*body-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+	color: #111;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2.5em/5px;
+	margin-bottom: 30px;
+}
+
+/* Секция About */
+.about-section {
+	background-color: #fff;
+	padding: 60px 0;
+}
+
+.about-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.about-description {
+	width: 50%;
+	padding-right: 20px;
+}
+
+.about-description p {
+	font-size: 1em; /* Размер шрифта как в .feature p */
+	line-height: 1.6;
+	color: #666; /* Цвет текста как в .feature p */
+	margin-bottom: 20px;
+	position: relative;
+	padding-left: 2em; /* Отступ слева для точки */
+}
+
+.about-description strong {
+	font-size: 1.5em; /* Размер шрифта как в .feature-title */
+	color: #333; /* Цвет текста как в .feature-title */
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.about-description strong::before {
+	content: "•";
+	position: absolute;
+	left: -0.8em; /* Сдвигаем точку влево */
+	top: -0.3em;
+	color: #333; /* Цвет точки */
+	font-size: 1.5em; /* Размер точки */
+}
+
+
+.about-image {
+	width: 50%;
+}
+
+.about-image img {
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Секция с отзывами */
+.testimonial-section {
+	background-color: #d4d4d4;
+	padding: 60px 0;
+}
+
+.testimonial {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap; /* Добавляем перенос, если блоков больше, чем помещается в строку */
+	gap: 20px; /* Отступы между блоками */
+}
+
+.testimonial-item {
+	text-align: center;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	width: calc(33.333% - 20px); /* Учитываем отступы */
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+}
+
+.testimonial-item img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+
+.testimonial-item h4 {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+
+.testimonial-item p {
+	font-size: 1.2em;
+	color: #555;
+	line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+/*footer-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для футера */
+.site-footer {
+  background-color: #333; /* Фоновый цвет футера */
+  color: #848484; /* Цвет текста */
+  padding: 10px 0; /* Внешние отступы футера сверху и снизу */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.site-footer .container {
+  max-width: 1200px; /* Максимальная ширина контейнера футера */
+  margin: 0 auto; /* Центрирование контейнера */
+  padding: 0 15px; /* Внутренние отступы */
+}
+
+.site-footer img {
+  max-width: 150px; /* Максимальная ширина логотипа футера */
+  height: auto; /* Высота логотипа автоматически */
+  margin-bottom: 20px; /* Отступ снизу от логотипа */
+}
+
+.site-footer address {
+  font-style: normal; /* Убираем курсив для адреса */
+  margin-bottom: 20px; /* Отступ снизу для адреса */
+}
+
+.site-footer address p {
+  margin: 0; /* Убираем отступы у параграфа */
+}
+
+.site-footer address a {
+  color: #f04; /* Цвет ссылок в адресе */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.site-footer address a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.newsletter-form {
+  display: flex; /* Используем flexbox для выравнивания элементов на одной строке */
+  justify-content: center; /* Центрирование элементов по горизонтали */
+  margin-bottom: 20px; /* Отступ снизу для формы */
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px; /* Скругляем только левый верхний и левый нижний угол */
+  width: 70%; /* Ширина элемента заполняет оставшееся пространство */
+  max-width: 500px; /* Максимальная ширина поля ввода */
+  box-sizing: border-box; /* Включаем отступы и границы в ширину элемента */
+}
+
+.newsletter-form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0; /* Скругляем только правый верхний и правый нижний угол */
+  background-color: #f04; /* Цвет кнопки */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form input[type="submit"]:hover {
+  background-color: #c03; /* Цвет кнопки при наведении */
+}
+
+.social-links {
+  margin: 20px 0; /* Отступы сверху и снизу для социальных иконок */
+}
+
+.social-links a {
+  color: white; /* Цвет иконок социальных сетей */
+  font-size: 24px; /* Размер иконок */
+  margin: 0 10px; /* Отступы по бокам иконок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.social-links a:hover {
+  color: #f04; /* Цвет иконок при наведении */
+}
+
+.copy {
+  font-size: 14px; /* Размер шрифта для текста копирайта */
+  margin-top: 20px; /* Отступ сверху для текста копирайта */
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.about-content {
+			flex-direction: column;
+			text-align: center;
+	}
+
+	.about-description, .about-image {
+			width: 100%;
+			padding: 0;
+	}
+
+	.about-description {
+			margin-bottom: 30px;
+	}
+
+	.testimonial {
+			flex-direction: column;
+			align-items: center;
+	}
+
+	.testimonial-item {
+			width: 80%;
+			margin-bottom: 20px;
+	}
+}

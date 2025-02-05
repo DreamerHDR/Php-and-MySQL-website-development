@@ -1,0 +1,326 @@
+/* Общие стили */
+html, body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+	margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/*header-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+	box-sizing: border-box; /* Убедись, что padding учитывается в ширине */
+}
+
+/* Стили для шапки сайта */
+.site-header {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+	display: flex; /* Используем Flexbox */
+  justify-content: space-between; /* Распределяем элементы по краям */
+  align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+
+#branding {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+/* Стили для логотипа */
+#branding img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Для адаптации логотипа на маленьких экранах */
+@media (max-width: 768px) {
+  #branding img {
+    max-width: 150px;
+  }
+}
+
+/* Навигация */
+.main-navigation {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+	display: flex; /* Используем Flexbox для меню */
+  justify-content: center; /* Центрируем элементы меню */
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: #444;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-item a:hover {
+  background-color: #555;
+}
+
+/* Адаптивное поведение на больших экранах */
+@media (min-width: 1200px) {
+  .hero {
+    height: 90vh; /* Ограничиваем высоту слайдера для больших экранов */
+  }
+}
+
+/* Адаптация шапки сайта для экранов 768px и меньше */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column; /* Располагаем элементы вертикально */
+    padding: 15px 0; /* Увеличиваем внутренние отступы для мобильных */
+  }
+
+  #branding {
+    margin-bottom: 15px; /* Добавляем отступ под логотипом */
+  }
+
+  .main-navigation {
+    flex-direction: column; /* Меню будет вертикальным */
+    padding: 0; /* Убираем отступы, чтобы меню стало плотнее */
+  }
+
+  .menu {
+    flex-direction: column; /* Меню элементы также располагаем вертикально */
+  }
+
+  .menu-item {
+    margin: 10px 0; /* Добавляем отступ между элементами меню */
+  }
+
+  .menu-item a {
+    padding: 10px 15px; /* Корректируем внутренние отступы ссылок */
+    width: 100%; /* Ссылки будут занимать всю ширину контейнера */
+    text-align: center; /* Текст по центру для более удобного восприятия */
+  }
+}
+
+
+/*body-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+.contact-container {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto;
+	max-width: 1200px;
+	padding: 20px;
+}
+
+/* Стили для формы */
+.contact-form {
+	flex: 1;
+	margin-right: 20px;
+	padding: 20px;
+	background-color: #d4d4d4;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+}
+
+.contact-form h2 {
+	margin-bottom: 20px;
+	color: #141414;
+}
+
+.contact-form input,
+.contact-form textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box; /* Учитываем паддинги и границы */
+}
+
+.contact-form button {
+	background-color: #f04; /* Розовый цвет */
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	box-sizing: border-box;
+	transition: background-color 0.3s ease; /* Плавный переход цвета */
+}
+
+.contact-form button:hover {
+	background-color: #c03; /* Красный цвет при наведении */
+}
+
+/* Стили для карты */
+.map-container {
+	flex: 1;
+	background-color: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+	width: 100%;
+	height: 100%;
+	min-height: 450px;
+}
+
+@media (max-width: 768px) {
+	.contact-container {
+		flex-direction: column; /* Элементы расположатся друг под другом */
+		padding: 10px; /* Уменьшим внутренние отступы для мобильных */
+	}
+
+	.contact-form {
+		margin-right: 0; /* Убираем правый отступ */
+		margin-bottom: 20px; /* Добавим отступ снизу, чтобы отделить форму от карты */
+	}
+
+	.map-container {
+		width: 100%; /* Карта займет всю ширину */
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+/* Стили для футера */
+.site-footer {
+  background-color: #333; /* Фоновый цвет футера */
+  color: #848484; /* Цвет текста */
+  padding: 10px 0; /* Внешние отступы футера сверху и снизу */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.site-footer .container {
+  max-width: 1200px; /* Максимальная ширина контейнера футера */
+  margin: 0 auto; /* Центрирование контейнера */
+  padding: 0 15px; /* Внутренние отступы */
+}
+
+.site-footer img {
+  max-width: 150px; /* Максимальная ширина логотипа футера */
+  height: auto; /* Высота логотипа автоматически */
+  margin-bottom: 20px; /* Отступ снизу от логотипа */
+}
+
+.site-footer address {
+  font-style: normal; /* Убираем курсив для адреса */
+  margin-bottom: 20px; /* Отступ снизу для адреса */
+}
+
+.site-footer address p {
+  margin: 0; /* Убираем отступы у параграфа */
+}
+
+.site-footer address a {
+  color: #f04; /* Цвет ссылок в адресе */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.site-footer address a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.newsletter-form {
+  display: flex; /* Используем flexbox для выравнивания элементов на одной строке */
+  justify-content: center; /* Центрирование элементов по горизонтали */
+  margin-bottom: 20px; /* Отступ снизу для формы */
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px; /* Скругляем только левый верхний и левый нижний угол */
+  width: 70%; /* Ширина элемента заполняет оставшееся пространство */
+  max-width: 500px; /* Максимальная ширина поля ввода */
+  box-sizing: border-box; /* Включаем отступы и границы в ширину элемента */
+}
+
+.newsletter-form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0; /* Скругляем только правый верхний и правый нижний угол */
+  background-color: #f04; /* Цвет кнопки */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form input[type="submit"]:hover {
+  background-color: #c03; /* Цвет кнопки при наведении */
+}
+
+.social-links {
+  margin: 20px 0; /* Отступы сверху и снизу для социальных иконок */
+}
+
+.social-links a {
+  color: white; /* Цвет иконок социальных сетей */
+  font-size: 24px; /* Размер иконок */
+  margin: 0 10px; /* Отступы по бокам иконок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.social-links a:hover {
+  color: #f04; /* Цвет иконок при наведении */
+}
+
+.copy {
+  font-size: 14px; /* Размер шрифта для текста копирайта */
+  margin-top: 20px; /* Отступ сверху для текста копирайта */
+}

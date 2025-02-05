@@ -1,0 +1,653 @@
+/* Общие стили */
+html, body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+	margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}ы
+
+
+
+
+/*header-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Основные стили контейнера */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Стили для шапки сайта */
+.site-header {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#branding {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+#branding img {
+  max-width: 100px;
+  height: auto;
+}
+
+.main-navigation {
+  background-color: #333;
+  padding: 10px;
+}
+
+/* Основные стили для меню */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu-item {
+  position: relative;
+  margin-right: 15px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  background-color: #444;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-item a:hover {
+  background-color: #555;
+}
+
+/* Стили для выпадающего меню сбоку */
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: rgba(211, 211, 211, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-10px); /* Начальное положение справа */
+  transition: opacity 0.3s ease, visibility 0s 0.3s, transform 0.3s ease;
+  z-index: 1001; /* Увеличен z-index для отображения поверх других элементов */
+}
+
+.profile-menu:hover .submenu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.submenu li {
+  position: relative;
+}
+
+.submenu a {
+  color: #000;
+  background-color: transparent;
+  padding: 5px;
+}
+
+/* Стили для формы входа и регистрации */
+.dropdown-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  z-index: 1000;  /* Обеспечиваем, чтобы форма была поверх других элементов */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-10px); /* Начальное положение справа */
+  transition: opacity 0.3s ease, visibility 0s 0.3s, transform 0.3s ease;
+}
+
+.login-menu:hover .dropdown-menu,
+.register-menu:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0); /* Сдвиг меню с правой стороны */
+}
+
+.login-menu,
+.register-menu {
+  position: relative;
+}
+
+/* Добавляем z-index для предотвращения перекрытия */
+.login-menu:hover .dropdown-menu,
+.register-menu:hover .dropdown-menu {
+  z-index: 1001; /* Меню авторизации будет поверх слайдера */
+}
+
+/* Стили формы логина */
+.dropdown-menu form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.dropdown-menu input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dropdown-menu button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #555;
+}
+
+
+
+
+
+/*body-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*slider------------------------------------------------------------*/
+
+
+/* Стили для слайдера */
+.hero {
+  width: 100%;
+  height: 880px;
+  overflow: hidden;
+  position: relative;
+	margin-top: 20px; 
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.other-elements {
+  position: relative; /* Контекст наложения */
+  padding-top: 20px; /* Отступ сверху */
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex; /* Используем flex для размещения текста и изображения */
+	box-sizing: border-box;
+}
+
+/* Контейнеры для текста и изображения */
+.text-container {
+  width: 50%; /* Половина ширины слайда для текста */
+  padding: 20px;
+  box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 100%; /* Половина ширины слайда для изображения */
+  display: flex;
+  justify-content: center; /* Центрирование изображения по горизонтали */
+  align-items: center; /* Центрирование изображения по вертикали */
+	margin-bottom: -90px;
+  background-size: 60%;
+  background-position: center;
+	background-repeat: no-repeat;
+  max-width: 100%; /* Ограничиваем максимальную ширину */
+  max-height: 100%; /* Ограничиваем максимальную высоту */
+  overflow: hidden; /* Предотвращаем выход содержимого за границы */
+}
+
+
+/* Стили для контейнера внутри слайда */
+.container1 {
+	color: white;
+	text-align: left;
+}
+
+#s1 .image-container {
+  background-image: url('back1.jpg');
+  background-position: center; /* Центрирование изображения */
+}
+
+#s2 .image-container {
+  background-image: url('back2.jpg');
+  background-position: center; /* Центрирование изображения */
+}
+
+#s3 .image-container {
+  background-image: url('back3.jpg');
+  background-position: center; /* Центрирование изображения */
+}
+
+
+/* Стили для заголовков и описания в слайде */
+.slide-title {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+.slide-subtitle {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.slide-desc {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+
+/* Контролы слайдера */
+.controls {
+	position: absolute;
+  bottom: 550px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.control {
+	display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+/* Скрытие радиокнопок */
+input[type="radio"] {
+	display: none;
+}
+
+.control:hover {
+	background-color: #ddd;
+}
+
+/* Переключение слайдов */
+#slide1:checked ~ .slides {
+	transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+	transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+	transform: translateX(-200%);
+}
+
+/* Когда кружок выбран, меняем цвет */
+input#slide1:checked ~ .controls label[for="slide1"] {
+	background-color: #f04; /* Цвет активного кружочка */
+}
+
+input#slide2:checked ~ .controls label[for="slide2"] {
+	background-color: #f04;
+}
+
+input#slide3:checked ~ .controls label[for="slide3"] {
+	background-color: #f04;
+}
+
+@media (max-width: 768px) {
+  /* Устанавливаем высоту слайдера на мобильных устройствах */
+  .hero {
+    height: 50vh; /* Снижаем высоту слайдера для мобильных устройств */
+    margin-top: 0;
+  }
+
+  .slider {
+    height: 50vh; /* Аналогично корректируем высоту */
+  }
+
+  .slide {
+    flex-direction: column; /* Переводим элементы внутри слайда в вертикальный режим */
+    min-width: 100%; /* Убедимся, что каждый слайд занимает 100% ширины */
+    height: auto; /* Устанавливаем автоматическую высоту */
+  }
+
+  .text-container {
+    width: 100%; /* Текст занимает всю ширину слайда */
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Центрируем текст на мобильных */
+  }
+
+	.image-container {
+		background-size: contain; /* Изображение масштабируется, чтобы поместиться в контейнер, не обрезаясь */
+		background-position: center; /* Центрируем изображение */
+		background-repeat: no-repeat; /* Отключаем повтор */
+		width: 100%;
+		height: 200px; /* Высота зависит от содержимого */
+		min-height: 20vh; /* Минимальная высота для мобильных устройств */
+	}
+	
+
+	.image-container img {
+		width: 100%; /* Изображение занимает всю ширину контейнера */
+		height: auto; /* Сохраняем пропорции */
+		max-height: 50vh; /* Ограничиваем высоту на мобильных */
+		object-fit: cover; /* Масштабируем изображение */
+	}
+	
+
+  /* Уменьшаем размеры текста для мобильных устройств */
+  .slide-title {
+    font-size: 1.5em;
+  }
+
+  .slide-subtitle {
+    font-size: 1.2em;
+  }
+
+  .slide-desc {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+
+  /* Контролы слайдера */
+  .controls {
+    bottom: 10px; /* Размещаем контролы ближе к низу слайда */
+  }
+
+  .control {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Корректируем размер слайдов при переключении */
+  #slide1:checked ~ .slides {
+    transform: translateX(0%);
+  }
+
+  #slide2:checked ~ .slides {
+    transform: translateX(-100%);
+  }
+
+  #slide3:checked ~ .slides {
+    transform: translateX(-200%);
+  }
+}
+
+
+
+
+
+
+/*section------------------------------------------------------------*/
+
+
+/* Общие стили для секций */
+.fullwidth-block {
+	padding: 20px 15px; /* Уменьшены отступы сверху и снизу */
+  background-color: #f9f9f9; /* Цвет фона секции */
+  margin-top: -550px; /* Отрицательный отступ для поднятия секции выше */
+}
+
+.section-title {
+  font-size: 2.5em/5px; /* Размер шрифта заголовка секции */
+  margin-bottom: 30px; /* Отступ снизу */
+  text-align: center; /* Выравнивание по центру */
+  color: #333; /* Цвет текста заголовка секции */
+}
+
+/* Стили для колонок */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Расстояние между колонками */
+}
+
+.col-md-4 {
+  flex: 1;
+  max-width: 33.3333%; /* Одна треть от ширины родительского контейнера */
+  box-sizing: border-box;
+}
+
+/* Стили для элемента feature */
+.feature {
+  background-color: #fff; /* Белый фон для каждого элемента */
+  border-radius: 8px; /* Закругленные углы */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  overflow: hidden; /* Обрезка содержимого, выходящего за границы */
+  text-align: center; /* Выравнивание текста по центру */
+  padding: 20px; /* Внутренние отступы */
+}
+
+/* Стили для фигуры с углом */
+.cut-corner {
+  position: relative; /* Относительное позиционирование для использования псевдоэлементов */
+}
+
+.cut-corner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+/* Стили для изображений внутри .cut-corner */
+.cut-corner img {
+  width: 100%;
+  height: auto; /* Сохраняем пропорции изображения */
+  display: block;
+  border-bottom: 3px solid #f04; /* Низ изображения с цветной рамкой */
+}
+
+/* Стили для заголовков внутри .feature */
+.feature-title {
+  font-size: 1.5em;
+  margin: 15px 0; /* Отступы сверху и снизу */
+  color: #333;
+}
+
+/* Стили для параграфов внутри .feature */
+.feature p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  /* Колонки выстраиваются друг под другом */
+  .col-md-4 {
+    max-width: 100%; /* Занимают 100% ширины контейнера */
+    flex: none; /* Отключаем свойство flex для полной ширины */
+  }
+
+  /* Уменьшаем отступы внутри секций для мобильных устройств */
+  .fullwidth-block {
+    margin-top: 0; /* Убираем отрицательный отступ */
+    padding: 15px 10px; /* Уменьшаем отступы для мобильных */
+  }
+
+  /* Корректируем размер изображений */
+  .cut-corner img {
+    width: 100%; /* Изображение занимает всю ширину блока */
+    height: auto; /* Сохраняем пропорции */
+    border-bottom: 3px solid #f04; /* Низ изображения с рамкой */
+  }
+
+  /* Центрируем заголовки и текст */
+  .feature-title {
+    font-size: 1.2em; /* Уменьшаем шрифт для мобильных */
+    margin: 10px 0;
+  }
+
+  .feature p {
+    font-size: 0.9em; /* Уменьшаем шрифт для текста */
+    line-height: 1.4;
+  }
+}
+
+
+
+
+
+
+
+/*footer-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для футера */
+.site-footer {
+  background-color: #333; /* Фоновый цвет футера */
+  color: #848484; /* Цвет текста */
+  padding: 10px 0; /* Внешние отступы футера сверху и снизу */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.site-footer .container {
+  max-width: 1200px; /* Максимальная ширина контейнера футера */
+  margin: 0 auto; /* Центрирование контейнера */
+  padding: 0 15px; /* Внутренние отступы */
+}
+
+.site-footer img {
+  max-width: 150px; /* Максимальная ширина логотипа футера */
+  height: auto; /* Высота логотипа автоматически */
+  margin-bottom: 20px; /* Отступ снизу от логотипа */
+}
+
+.site-footer address {
+  font-style: normal; /* Убираем курсив для адреса */
+  margin-bottom: 20px; /* Отступ снизу для адреса */
+}
+
+.site-footer address p {
+  margin: 0; /* Убираем отступы у параграфа */
+}
+
+.site-footer address a {
+  color: #f04; /* Цвет ссылок в адресе */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.site-footer address a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.newsletter-form {
+  display: flex; /* Используем flexbox для выравнивания элементов на одной строке */
+  justify-content: center; /* Центрирование элементов по горизонтали */
+  margin-bottom: 20px; /* Отступ снизу для формы */
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px; /* Скругляем только левый верхний и левый нижний угол */
+  width: 70%; /* Ширина элемента заполняет оставшееся пространство */
+  max-width: 500px; /* Максимальная ширина поля ввода */
+  box-sizing: border-box; /* Включаем отступы и границы в ширину элемента */
+}
+
+.newsletter-form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0; /* Скругляем только правый верхний и правый нижний угол */
+  background-color: #f04; /* Цвет кнопки */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form input[type="submit"]:hover {
+  background-color: #c03; /* Цвет кнопки при наведении */
+}
+
+.social-links {
+  margin: 20px 0; /* Отступы сверху и снизу для социальных иконок */
+}
+
+.social-links a {
+  color: white; /* Цвет иконок социальных сетей */
+  font-size: 24px; /* Размер иконок */
+  margin: 0 10px; /* Отступы по бокам иконок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.social-links a:hover {
+  color: #f04; /* Цвет иконок при наведении */
+}
+
+.copy {
+  font-size: 14px; /* Размер шрифта для текста копирайта */
+  margin-top: 20px; /* Отступ сверху для текста копирайта */
+}
+

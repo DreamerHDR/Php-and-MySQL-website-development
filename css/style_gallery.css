@@ -1,0 +1,519 @@
+/* Общие стили */
+html, body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+	margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/*header-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+.container_header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+	box-sizing: border-box; /* Убедись, что padding учитывается в ширине */
+}
+
+/* Стили для шапки сайта */
+.site-header {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+	display: flex; /* Используем Flexbox */
+  justify-content: space-between; /* Распределяем элементы по краям */
+  align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+
+#branding {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+/* Стили для логотипа */
+#branding img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Для адаптации логотипа на маленьких экранах */
+@media (max-width: 768px) {
+  #branding img {
+    max-width: 150px;
+  }
+}
+
+/* Навигация */
+.main-navigation {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+	display: flex; /* Используем Flexbox для меню */
+  justify-content: center; /* Центрируем элементы меню */
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: #444;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-item a:hover {
+  background-color: #555;
+}
+
+/* Адаптивное поведение на больших экранах */
+@media (min-width: 1200px) {
+  .hero {
+    height: 90vh; /* Ограничиваем высоту слайдера для больших экранов */
+  }
+}
+
+/* Адаптация шапки сайта для экранов 768px и меньше */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column; /* Располагаем элементы вертикально */
+    padding: 15px 0; /* Увеличиваем внутренние отступы для мобильных */
+  }
+
+  #branding {
+    margin-bottom: 15px; /* Добавляем отступ под логотипом */
+  }
+
+  .main-navigation {
+    flex-direction: column; /* Меню будет вертикальным */
+    padding: 0; /* Убираем отступы, чтобы меню стало плотнее */
+  }
+
+  .menu {
+    flex-direction: column; /* Меню элементы также располагаем вертикально */
+  }
+
+  .menu-item {
+    margin: 10px 0; /* Добавляем отступ между элементами меню */
+  }
+
+  .menu-item a {
+    padding: 10px 15px; /* Корректируем внутренние отступы ссылок */
+    width: 100%; /* Ссылки будут занимать всю ширину контейнера */
+    text-align: center; /* Текст по центру для более удобного восприятия */
+  }
+}
+
+
+
+/*body-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+/* Основные стили */
+.wrapper {
+  margin: 0 auto;
+  background-color: #d4d4d4; /* Светло-серый фон */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Секция поиска */
+#search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Добавьте отступы для визуального разделения */
+  position: relative; /* Для позиционирования кнопки поиска */
+}
+
+#search-container input {
+  background-color: transparent;
+  width: 40%;
+  border: none; /* Убираем нижнюю границу */
+  border-radius: 5px; /* Закругленные углы */
+  padding: 1em 0.3em;
+  font-size: 1rem; /* Размер шрифта */
+  color: black; /* Цвет текста */
+  transition: border 0.3s, box-shadow 0.3s; /* Плавный переход */
+}
+
+#search-container input:focus {
+  outline: none; /* Убираем стандартное выделение */
+  border-bottom: 2px solid #f04; /* Подчеркивание при фокусе */
+  box-shadow: 0 4px 8px rgba(240, 4, 4, 0.2); /* Тень при фокусе */
+}
+
+#search-container button {
+  margin-left: 1em;
+  padding: 1em 2em;
+  background: linear-gradient(90deg, #f04, #ff6a00); /* Градиент */
+  color: #ffffff;
+  border: none; /* Убираем стандартную границу */
+  border-radius: 5px;
+  cursor: pointer; /* Курсор при наведении */
+  transition: background 0.3s, transform 0.3s; /* Плавный переход */
+}
+
+#search-container button:hover {
+  background: linear-gradient(90deg, #ff6a00, #f04); /* Обратный градиент при наведении */
+  transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+#search-container button:active {
+  transform: scale(0.95); /* Уменьшение кнопки при нажатии */
+}
+
+/* Кнопки фильтрации */
+.button-value {
+  border: 2px solid #f04;
+  padding: 1em 2.2em;
+  border-radius: 3em;
+  background-color: transparent;
+  color: #f04;
+  cursor: pointer;
+}
+.active {
+  background-color: #f04;
+  color: #ffffff;
+}
+
+/* Галерея товаров */
+#products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Четыре карточки в ряду */
+  grid-gap: 5px; /* Отступы между карточками */
+  justify-items: center;
+  padding: 20px 0;
+  margin-right: 240px; /* Добавляем отступ справа для смещения карточек */
+}
+
+/* Карточка товара */
+.card {
+	margin-top: 15px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 400px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение товара */
+.image-container img {
+  width: 100%;
+  border-bottom: 3px solid #ddd;
+  object-fit: contain;
+  height: 300px;
+}
+
+/* Информация о товаре */
+.container {
+  text-align: center;
+  color: #110f29;
+	margin-bottom: -25px;
+	margin-top: -25px;
+}
+
+/* Название товара */
+.container h5 {
+	text-align: left;
+  font-size: 1.3em;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Цена товара */
+.container h6 {
+  font-size: 1.2em;
+  color: #ff6f61;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Скрытие элемента */
+.hide {
+  display: none;
+}
+
+.download-button {
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  color: #f04; /* Цвет стрелочки */
+  font-size: 1.5em; /* Размер шрифта */
+  cursor: pointer; /* Курсор при наведении */
+  margin-left: 10px; /* Отступ слева для отделения от названия */
+  transition: transform 0.3s; /* Плавный переход для эффекта */
+}
+
+.download-button:hover {
+  transform: scale(1.2); /* Увеличение при наведении */
+}
+
+.download-button:focus {
+  outline: none; /* Убираем стандартное выделение */
+}
+
+.hidden {
+	display: none;
+}
+
+#filter-menu {
+	position: fixed; /* Сделать фиксированным */
+	top: 100px; /* Регулируйте по вашему макету */
+	right: 20px; /* Расположить справа */
+	background-color: #ffffff; /* Белый фон для лучшей читабельности */
+	color: #110f29; /* Цвет текста, соответствующий вашему сайту */
+	border: 2px solid #f04; /* Обводка в цвет основного акцента */
+	border-radius: 5px; /* Закругление углов */
+	padding: 15px; /* Увеличенный отступ для лучшего восприятия */
+	width: 220px; /* Увеличенная ширина для более удобного размещения элементов */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для эффекта, чтобы сделать меню более "выпуклым" */
+	transition: box-shadow 0.3s ease; /* Плавный переход для тени */
+}
+
+#filter-menu:hover {
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
+}
+
+#filter-menu label {
+	color: #110f29; /* Цвет текста меток, чтобы он соответствовал цветовой палитре */
+}
+
+#filter-menu input {
+	margin: 5px 0; /* Отступы между метками и полями ввода */
+	padding: 0.5em; /* Отступ внутри полей ввода */
+	border: 1px solid #ccc; /* Стандартная граница для полей ввода */
+	border-radius: 5px; /* Закругление углов */
+	width: calc(100% - 12px); /* Ширина с учетом отступов */
+	transition: border 0.3s; /* Плавный переход для границы */
+}
+
+#filter-menu input:focus {
+	outline: none; /* Убираем стандартное выделение */
+	border-color: #f04; /* Цвет границы при фокусе */
+}
+
+#filter-menu button {
+	padding: 0.5em; /* Отступ для кнопки */
+	background: linear-gradient(90deg, #f04, #ff6a00); /* Градиент для кнопки */
+	color: #ffffff; /* Белый текст на кнопке */
+	border: none; /* Убираем стандартную границу */
+	border-radius: 5px; /* Закругление углов кнопки */
+	cursor: pointer; /* Указатель при наведении */
+	transition: background 0.3s, transform 0.3s; /* Плавный переход */
+	margin-top: 10px; /* Отступ сверху */
+}
+
+#filter-menu button:hover {
+	background: linear-gradient(90deg, #ff6a00, #f04); /* Обратный градиент при наведении */
+	transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+#filter-toggle {
+	margin-top: 10px; /* Добавьте отступ сверху для кнопки "Фильтр" */
+}
+
+.filter-button {
+	background-color: transparent; /* Прозрачный фон для кнопки "Фильтр" */
+	color: #007bff; /* Цвет текста, чтобы соответствовать другим кнопкам */
+	border: 2px solid #007bff; /* Обводка того же цвета, что и фон остальных кнопок */
+	border-radius: 5px; /* Закругление углов */
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 720px) {
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 10em;
+  }
+  .card {
+    max-width: 10em;
+    margin-top: 1em;
+  }
+  #products {
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
+  }
+}
+
+
+
+
+
+
+
+/*footer-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для футера */
+.site-footer {
+  background-color: #333; /* Фоновый цвет футера */
+  color: #848484; /* Цвет текста */
+  padding: 10px 0; /* Внешние отступы футера сверху и снизу */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.site-footer .container {
+  max-width: 1200px; /* Максимальная ширина контейнера футера */
+  margin: 0 auto; /* Центрирование контейнера */
+  padding: 0 15px; /* Внутренние отступы */
+}
+
+.site-footer img {
+  max-width: 150px; /* Максимальная ширина логотипа футера */
+  height: auto; /* Высота логотипа автоматически */
+  margin-bottom: 20px; /* Отступ снизу от логотипа */
+}
+
+.site-footer address {
+  font-style: normal; /* Убираем курсив для адреса */
+  margin-bottom: 20px; /* Отступ снизу для адреса */
+}
+
+.site-footer address p {
+  margin: 0; /* Убираем отступы у параграфа */
+}
+
+.site-footer address a {
+  color: #f04; /* Цвет ссылок в адресе */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.site-footer address a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.newsletter-form {
+  display: flex; /* Используем flexbox для выравнивания элементов на одной строке */
+  justify-content: center; /* Центрирование элементов по горизонтали */
+  margin-bottom: 20px; /* Отступ снизу для формы */
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px; /* Скругляем только левый верхний и левый нижний угол */
+  width: 70%; /* Ширина элемента заполняет оставшееся пространство */
+  max-width: 500px; /* Максимальная ширина поля ввода */
+  box-sizing: border-box; /* Включаем отступы и границы в ширину элемента */
+}
+
+.newsletter-form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0; /* Скругляем только правый верхний и правый нижний угол */
+  background-color: #f04; /* Цвет кнопки */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form input[type="submit"]:hover {
+  background-color: #c03; /* Цвет кнопки при наведении */
+}
+
+.social-links {
+  margin: 20px 0; /* Отступы сверху и снизу для социальных иконок */
+}
+
+.social-links a {
+  color: white; /* Цвет иконок социальных сетей */
+  font-size: 24px; /* Размер иконок */
+  margin: 0 10px; /* Отступы по бокам иконок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.social-links a:hover {
+  color: #f04; /* Цвет иконок при наведении */
+}
+
+.copy {
+  font-size: 14px; /* Размер шрифта для текста копирайта */
+  margin-top: 20px; /* Отступ сверху для текста копирайта */
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.about-content {
+			flex-direction: column;
+			text-align: center;
+	}
+
+	.about-description, .about-image {
+			width: 100%;
+			padding: 0;
+	}
+
+	.about-description {
+			margin-bottom: 30px;
+	}
+
+	.testimonial {
+			flex-direction: column;
+			align-items: center;
+	}
+
+	.testimonial-item {
+			width: 80%;
+			margin-bottom: 20px;
+	}
+}

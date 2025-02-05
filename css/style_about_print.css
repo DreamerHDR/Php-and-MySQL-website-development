@@ -1,0 +1,137 @@
+html, body {
+	background-color: #fff; /* Белый фон для печати */
+	color: #000; /* Чёрный текст для лучшей читаемости */
+	font-family: "Arial", sans-serif; /* Простой шрифт для печати */
+	font-size: 12pt; /* Размер шрифта для печати */
+	line-height: 1.5; /* Интерлиньяж для удобства чтения */
+	margin: 0; /* Убираем отступы */
+	padding: 0; /* Убираем внутренние отступы */
+}
+
+/* Стили для шапки */
+.site-header {
+	background-color: #f0f0f0; /* Серый фон для шапки */
+	display: block; /* Убираем Flexbox для печати */
+	text-align: center; /* Центрируем текст */
+	margin-bottom: 20px; /* Отступ снизу */
+	padding: 10px; /* Внутренние отступы для шапки */
+}
+
+/* Стили для кнопок */
+.button {
+	display: inline-block; /* Отображаем кнопки в строку */
+	background-color: #000; /* Черный цвет фона кнопки */
+	color: #fff; /* Белый цвет текста кнопки */
+	padding: 10px 15px; /* Внутренние отступы кнопки */
+	text-align: center; /* Центрируем текст на кнопке */
+	text-decoration: none; /* Убираем подчеркивание */
+	border-radius: 5px; /* Скругленные углы кнопки */
+	margin: 5px; /* Отступ между кнопками */
+}
+
+/* Эффект при наведении на кнопки */
+.button:hover {
+	background-color: #444; /* Темнее фон при наведении */
+	cursor: pointer; /* Указатель при наведении */
+}
+
+
+#branding img {
+	max-width: 100px; /* Максимальная ширина логотипа */
+	height: auto; /* Автоматическая высота */
+}
+
+/* Навигация */
+.main-navigation {
+	display: block; /* Убираем Flexbox */
+	text-align: center; /* Центрируем меню */
+	margin-bottom: 20px; /* Отступ снизу */
+}
+
+.menu {
+	list-style: none; /* Убираем маркеры списка */
+	padding: 0; /* Убираем отступы */
+	margin: 0; /* Убираем отступы */
+}
+
+.menu-item {
+	display: inline; /* Отображаем элементы в строку */
+	margin-right: 15px; /* Отступ между пунктами меню */
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+	margin: 10px 0; /* Отступы для заголовков */
+	text-align: center; /* Центрируем заголовки */
+}
+
+/* Секция с текстом в начале */
+.intro-text {
+	margin-bottom: 40px; /* Отступ снизу */
+	text-align: center; /* Центрируем текст */
+}
+
+/* Секция About */
+.about-section {
+	margin-bottom: 40px; /* Отступ снизу */
+	text-align: center; /* Центрируем текст */
+}
+
+.about-content {
+	display: block; /* Показываем блок с текстом */
+	margin: 0 auto; /* Центрируем блок */
+	max-width: 600px; /* Ограничиваем максимальную ширину */
+}
+
+/* Убираем изображение в секции about-image для печати */
+.about-image {
+	display: none; /* Скрываем блок с изображением */
+}
+
+/* Секция с отзывами */
+.testimonial-section {
+	margin-bottom: 40px; /* Отступ снизу */
+}
+
+.testimonial {
+	display: flex; /* Используем Flexbox для расположения отзывов */
+	flex-wrap: wrap; /* Позволяем переносить элементы на новую строку */
+	justify-content: center; /* Центрируем элементы */
+}
+
+.testimonial-item {
+	margin: 10px; /* Отступ между отзывами */
+	padding: 10px; /* Отступ внутри блока отзыва */
+	border: 1px solid #ccc; /* Рамка вокруг отзыва */
+	max-width: 250px; /* Максимальная ширина блока отзыва */
+	text-align: center; /* Центрируем текст внутри отзыва */
+}
+
+/* Убираем изображения из отзывов */
+.testimonial-item img {
+	max-width: 50px; /* Уменьшаем ширину изображений отзывов */
+	height: auto; /* Автоматическая высота */
+	margin-bottom: 5px; /* Отступ снизу для изображения */
+}
+
+/* Стили для футера */
+.site-footer {
+	text-align: center; /* Центрируем текст футера */
+	margin-top: 20px; /* Уменьшаем отступ сверху */
+	padding: 5px; /* Уменьшаем внутренние отступы */
+	font-size: 10pt; /* Размер шрифта для футера */
+}
+
+.site-footer img {
+	max-width: 80px; /* Уменьшаем максимальную ширину логотипа футера */
+	height: auto; /* Автоматическая высота */
+}
+
+.copy {
+	display: none;
+}
+
+.newsletter-form,
+.social-links {
+	display: none; /* Скрываем форму подписки и социальные ссылки в печати */
+}
